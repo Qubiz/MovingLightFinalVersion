@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">F I N A L</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="mode_manual">M A N U A L</string>
+    <string name="mode_automatic">A U T O M A T I C</string>
+    <string name="mode">M O D E</string>
+</resources>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mode_manual">M A N U A L</string>
+    <string name="mode_automatic">A U T O M A T I C</string>
+</resources>
