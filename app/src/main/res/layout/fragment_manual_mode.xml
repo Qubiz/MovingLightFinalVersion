@@ -17,15 +17,24 @@
 
     <FrameLayout
         android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/button_off"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="80">
 
-        <ExpandableListView
+        <ListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/list_view_presets"
-            android:layout_gravity="center_horizontal" />
+            android:id="@+id/list_view_presets" />
     </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/button_off"/>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -40,6 +49,6 @@
             android:text="+"
             android:textColor="@color/accent"
             android:id="@+id/button_add_new_preset"
-            />
+        />
     </FrameLayout>
 </LinearLayout>
