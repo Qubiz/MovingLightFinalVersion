@@ -1,8 +1,11 @@
 <resources>
-    <string name="app_name">F I N A L</string>
+    <string name="app_name">Growing Light</string>
 
     <string name="action_settings">Settings</string>
     <string name="mode_manual">M A N U A L</string>
     <string name="mode_automatic">A U T O M A T I C</string>
     <string name="mode">M O D E</string>
+    <string name="preset_name_hint">N A M E</string>
+    <string name="presets">PRESETS</string>
+    <string name="add_preset">+</string>
 </resources>

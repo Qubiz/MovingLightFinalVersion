@@ -14,19 +14,40 @@ import android.view.View;
 import qubiz.movinglightfinalversion.fragments.AutomaticModeFragment;
 import qubiz.movinglightfinalversion.fragments.ManualModeFragment;
 
+/**
+ * Author: Mathijs de Groot (S1609483)
+ *
+ * Info:
+ * De class MainActivity is de activity die aan wordt geroepen bij het starten van de app.
+ */
 public class MainActivity extends ActionBarActivity {
 
-    Toolbar toolbar;
+    /**
+     * De toolbar bovenin de app.
+     */
+    private Toolbar toolbar;
 
-    AppCompatButton buttonAutomatic;
-    AppCompatButton buttonManual;
+    /**
+     * De buttons voor het switchen tussen automatisch en handmatige modes.
+     */
+    private AppCompatButton buttonAutomatic;
+    private AppCompatButton buttonManual;
 
-    Fragment automaticModeFragment;
-    Fragment manualModeFragment;
+    /**
+     * De fragments voor de content van de autmatische en handmatige modes.
+     */
+    private Fragment automaticModeFragment;
+    private Fragment manualModeFragment;
 
-    FragmentTransaction fragmentTransaction;
+    private FragmentTransaction fragmentTransaction;
 
-    boolean automaticModeOn = true;
+    /**
+     * Flag om te kijken in welke toestand de app/lamp zich op dit moment bevindt.
+     *
+     * true = automatisch
+     * false = handmatig
+     */
+    private boolean automaticModeOn = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +64,13 @@ public class MainActivity extends ActionBarActivity {
         buttonAutomatic = (AppCompatButton) findViewById(R.id.button_automatic);
         buttonManual = (AppCompatButton) findViewById(R.id.button_manual);
 
+        // CREËER DE FRAGMENTEN
         automaticModeFragment = new AutomaticModeFragment();
         manualModeFragment = new ManualModeFragment();
 
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
 
+        // STEL DE AUTOMATISCHE MODES IN ALS HUIDIGE CONTENT
         fragmentTransaction.replace(R.id.fragment_container, automaticModeFragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
@@ -56,6 +79,7 @@ public class MainActivity extends ActionBarActivity {
         buttonAutomatic.setBackgroundColor(Color.parseColor("#FF5722"));
         buttonManual.setBackgroundColor(Color.parseColor("#B6B6B6"));
 
+        // ONCLICKLISTNER VOOR HET SWITCHEN TUSSEN DE VERSCHILLENDE MODES.
         buttonAutomatic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,6 +98,7 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
+        // ONCLICKLISTNER VOOR HET SWITCHEN TUSSEN DE VERSCHILLENDE MODES.
         buttonManual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,6 +122,10 @@ public class MainActivity extends ActionBarActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
+        // VOEG DE 'ON-OFF' SWITCH TOE AAN DE TOOLBAR
+        MenuItem item = menu.findItem(R.id.toolbar_on_off_switch);
+        item.setActionView(R.layout.toolbar_on_off_switch);
         return true;
     }
 

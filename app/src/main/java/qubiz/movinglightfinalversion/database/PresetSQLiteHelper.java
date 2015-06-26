@@ -10,8 +10,15 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-import qubiz.movinglightfinalversion.Preset;
+import qubiz.movinglightfinalversion.presets.Preset;
 
+/**
+ * Author: Mathijs de Groot (S1609483)
+ *
+ * Info:
+ * De class PresetSQLiteHelper is de helper class voor het lezen en schrijven van en naar de
+ * database.
+ */
 public class PresetSQLiteHelper extends SQLiteOpenHelper {
 
     /**
@@ -24,12 +31,22 @@ public class PresetSQLiteHelper extends SQLiteOpenHelper {
      */
     private static final int DATABASE_VERSION = 1;
 
+    /**
+     * TABEL NAAM
+     */
     private static final String TABLE_PRESETS = "presets";
+
+    /**
+     * KEYS VOOR HET VERKRIJGEN VAN DE ATTRIBUTEN VAN DE PRESETS UIT DE DATABASE
+     */
     private static final String KEY_ID = "id";
     private static final String KEY_NAME = "name";
     private static final String KEY_COLOR = "color";
     private static final String KEY_ENABLED = "enabled";
 
+    /**
+     * DE
+     */
     private static final String[] COLUMNS = {KEY_ID, KEY_NAME, KEY_COLOR, KEY_ENABLED};
 
     public PresetSQLiteHelper(Context context) {
@@ -53,6 +70,10 @@ public class PresetSQLiteHelper extends SQLiteOpenHelper {
         this.onCreate(db);
     }
 
+    /**
+     * Voegt een nieuwe preset toe aan de database.
+     * @param preset de toe te voegen preset.
+     */
     public void addPreset(Preset preset) {
         Log.d("addPreset", preset.toString());
 
@@ -69,6 +90,11 @@ public class PresetSQLiteHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    /**
+     * Verkrijgt een preset uit de database met opgegeven ID.
+     * @param id het id van de te verkrijgen preset.
+     * @return de preset.
+     */
     public Preset getPreset(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -95,6 +121,10 @@ public class PresetSQLiteHelper extends SQLiteOpenHelper {
         return preset;
     }
 
+    /**
+     * Verkrijgt een lijst met alle presets die op dit moment in de database zitten.
+     * @return de lijst met presets.
+     */
     public List<Preset> getAllPresets() {
         List<Preset> presets = new ArrayList<Preset>();
 
@@ -122,6 +152,11 @@ public class PresetSQLiteHelper extends SQLiteOpenHelper {
         return presets;
     }
 
+    /**
+     * Update de attributen van een bestaande preset in de database.
+     * @param preset de preset die moet worden geupdate.
+     * @return het aantal items die geupdate zijn.
+     */
     public int updatePreset(Preset preset) {
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -139,6 +174,10 @@ public class PresetSQLiteHelper extends SQLiteOpenHelper {
         return i;
     }
 
+    /**
+     * Verwijdert een preset uit de database.
+     * @param preset de te verwijderen preset.
+     */
     public void deletePreset(Preset preset) {
         SQLiteDatabase db = this.getWritableDatabase();
 

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- AUTHOR: Mathijs de Groot (S1609483) -->
+
+<!-- Layout voor de on-off switch voor de toolbar -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <android.support.v7.widget.SwitchCompat
+        android:id="@+id/action_bar_on_off_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/text_view_off"
+        android:layout_toEndOf="@+id/text_view_off"
+        />
+
+    <TextView
+        android:id="@+id/text_view_off"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="OFF"
+        android:gravity="center_vertical"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:id="@+id/text_view_on"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="ON"
+        android:layout_toRightOf="@+id/action_bar_on_off_switch"
+        android:layout_toEndOf="@+id/action_bar_on_off_switch"
+        android:gravity="center_vertical"
+        android:textColor="@android:color/white"/>
+
+    <Space
+        android:layout_width="20dp"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/text_view_on"
+        android:layout_toEndOf="@+id/text_view_on" />
+
+</RelativeLayout>

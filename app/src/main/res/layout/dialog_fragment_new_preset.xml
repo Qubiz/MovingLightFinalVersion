@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- AUTHOR: Mathijs de Groot (S1609483) -->
+
+<!-- Layout voor het dialoogscherm voor het creëeren van een nieuwe preset. -->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!-- Container voor het invoer veld van de naam -->
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -17,15 +22,15 @@
             android:id="@+id/dialog_fragment_new_preset_edit_text"
             android:textColor="@color/primary_material_dark"
             android:maxLines="1"
-            android:text=""
             android:gravity="center"
             android:singleLine="true"
             android:maxLength="20"
             android:inputType="textNoSuggestions"
-            android:hint="P R E S E T  N A M E"/>
+            android:hint="@string/preset_name_hint"/>
 
     </LinearLayout>
 
+    <!-- Container van de kleurenkiezer -->
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"

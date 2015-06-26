@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<!-- AUTHOR: Mathijs de Groot (S1609483) -->
+
+<!-- Layout van het fragment van de automatische modus -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -101,7 +106,8 @@
                 android:gravity="center"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="N/A"
-                android:textColor="@color/primary_text" />
+                android:textColor="@color/primary_text"
+                android:id="@+id/text_view_brightness_2"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -142,7 +148,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="N/A"
+                android:text="26 ℃"
                 android:textColor="@color/primary_text" />
         </LinearLayout>
 
